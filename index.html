@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de déficit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de déficit</h1>
+        <form id="tmbForm">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" required>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+
+            <label for="edad">Edad (años):</label>
+            <input type="number" id="edad" min="0" required>
+
+            <label for="altura">Altura (cm):</label>
+            <input type="number" id="altura" min="50" required>
+
+            <label for="pesoActual">Peso actual (kg):</label>
+            <input type="number" id="pesoActual" min="10" required>
+
+            <label for="pesoMeta">Peso meta (kg):</label>
+            <input type="number" id="pesoMeta" min="10" required>
+
+            <label for="actividad">Factor de actividad:</label>
+            <select id="actividad" required>
+                <option value="1.2">Poco o ningún ejercicio</option>
+                <option value="1.375">Ligero (1-3 días a la semana)</option>
+                <option value="1.55">Moderado (3-5 días a la semana)</option>
+                <option value="1.725">Fuerte (6-7 días a la semana)</option>
+                <option value="1.9">Muy fuerte (dos veces al día)</option>
+            </select>
+
+            <label for="deficit">Cuánto espero perder:</label>
+            <select id="deficit" required>
+                <option value="550">0.5 kg por semana</option>
+                <option value="1100">1 kg por semana</option>
+            </select>
+
+            <button type="submit" id="calcular">Calcular</button>
+        </form>
+        <div id="resultados"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
