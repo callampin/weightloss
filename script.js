@@ -106,12 +106,15 @@ document.getElementById('tmbForm').addEventListener('submit', (event) => {
 
 
     document.getElementById('resultados').innerHTML = `
-        <p>Calorías de mantenimiento: ${kcalMantenimiento.toFixed(1)} kcal</p>
-        <p>Calorías diarias para alcanzar tu meta: ${kcalAConsumir.toFixed(1)} kcal</p>
-        ${kcalAConsumir < 1200 ? '<p style="color: red;">Se recomienda subir el factor de actividad o dejar el objetivo semanal en 0.5 (en caso de seguir este aviso, haz ambas). Recuerda que menos de 1200kcal diarias puede tener graves consecuencias para la salud como pérdida de masa muscular, bajo nivel de grasa corporal esencial que puede afectar en la producción de hormonas y la regulación de la temperatura corporal, problemas metabólicos, hipoglucemia, disrupción del ciclo menstrual, puede reducirse la producción de hormonas tiroideas causando hipotiroidismo, depresión y ansiedad, pérdida de concentración y memoria, problemas cardiovasculares, etc.</p>' : ''}
-        <p>Tiempo aproximado para alcanzar tu meta: ${mesesNecesarios.toFixed(1)} meses</p>
-        <p>Índice de Masa Corporal (IMC): ${imc.toFixed(1)}</p>
-        <p>Categoría: ${categoriaIMC}</p>
-        ${tablaIMC}
-    `;
+    <p>Calorías de mantenimiento: ${kcalMantenimiento.toFixed(1)} kcal</p>
+    <p>Calorías diarias para alcanzar tu meta: ${kcalAConsumir.toFixed(1)} kcal</p>
+    ${(sexo === 'hombre' && kcalAConsumir < 1200) ? 
+        '<p style="color: red;">Se recomienda subir el factor de actividad o dejar el objetivo semanal en 0.5 (en caso de seguir este aviso, haz ambas). Recuerda que menos de 1200kcal diarias en hombres puede tener graves consecuencias para la salud como pérdida de masa muscular, bajo nivel de grasa corporal esencial que puede afectar en la producción de hormonas y la regulación de la temperatura corporal, problemas metabólicos, hipoglucemia, puede reducirse la producción de hormonas tiroideas causando hipotiroidismo, depresión y ansiedad, pérdida de concentración y memoria, problemas cardiovasculares, etc.</p>' : 
+        (sexo === 'mujer' && kcalAConsumir < 1500) ? 
+        '<p style="color: red;">Se recomienda subir el factor de actividad o dejar el objetivo semanal en 0.5 (en caso de seguir este aviso, haz ambas). Recuerda que menos de 1500kcal diarias en mujeres puede tener graves consecuencias para la salud como disrupción del ciclo menstrual, pérdida de masa muscular, bajo nivel de grasa corporal esencial que puede afectar en la producción de hormonas y la regulación de la temperatura corporal, problemas metabólicos, hipoglucemia, puede reducirse la producción de hormonas tiroideas causando hipotiroidismo, depresión y ansiedad, pérdida de concentración y memoria, problemas cardiovasculares, etc.</p>' : ''}
+    <p>Tiempo aproximado para alcanzar tu meta: ${mesesNecesarios.toFixed(1)} meses</p>
+    <p>Índice de Masa Corporal (IMC): ${imc.toFixed(1)}</p>
+    <p>Categoría: ${categoriaIMC}</p>
+    ${tablaIMC}
+`;
 });
