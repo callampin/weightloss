@@ -9,7 +9,7 @@ document.getElementById('tmbForm').addEventListener('submit', (event) => {
     const actividad = parseFloat(document.getElementById('actividad').value);
     const deficit = parseFloat(document.getElementById('deficit').value);
 
-    const pesoMinimoAceptable = altura - 110;
+    const pesoMinimoAceptable = altura - 115;
     if (pesoMeta < pesoMinimoAceptable ) {
         document.getElementById('resultados').innerHTML = `
             <p>Este peso no es saludable de acuerdo a tu estatura. Por favor reconsidera tus metas.</p>
